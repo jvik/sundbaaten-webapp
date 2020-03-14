@@ -3,7 +3,7 @@
     <v-row justify="center">
       <v-col
         class="d-flex"
-        cols="12"
+        cols="auto"
         sm="6"
       >
         <v-select
@@ -19,11 +19,7 @@
       class="mb-12"
       justify="center"
     >
-      <v-col
-        cols="auto"
-        xs="12"
-        md="8"
-      >
+      <v-col cols="auto">
         <ApolloQuery
           :query="require('../graphql/StopPlace.gql')"
           :variables="{ id: currentStopPlace.nsrId, numberOfDepartures, startDate: timeNow }"
@@ -47,11 +43,12 @@
               class="result apollo"
             >
               <v-data-table
+                fixed-header
                 :headers="headers"
                 :items="data.stopPlace.estimatedCalls"
-                :items-per-page="5"
                 class="elevation-1"
                 :hide-default-footer="true"
+                hide-default-header
               >
                 <template v-slot:item.aimedDepartureTime="{ item }">
                   <span>{{new Date(item.aimedDepartureTime).toLocaleTimeString()}}</span>
@@ -98,9 +95,8 @@ export default {
       numberOfDepartures: 5,
       headers: [
         {
-          text: "Avgangstid",
           align: "start",
-          sortable: true,
+          sortable: false,
           value: "aimedDepartureTime"
         }
       ]
@@ -115,4 +111,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+table tbody tr td span {
+  font-size: 1.5em;
+}
+</style>
