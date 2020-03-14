@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-row align="center">
+    <v-row justify="center">
       <v-col
         class="d-flex"
         cols="12"
@@ -15,11 +15,18 @@
         ></v-select>
       </v-col>
     </v-row>
-    <v-row>
-      <v-col>
+    <v-row
+      class="mb-12"
+      justify="center"
+    >
+      <v-col
+        cols="auto"
+        xs="12"
+        md="8"
+      >
         <ApolloQuery
           :query="require('../graphql/StopPlace.gql')"
-          :variables="{ id: currentStopPlace.nsrId, numberOfDepartures }"
+          :variables="{ id: currentStopPlace.nsrId, numberOfDepartures, startDate: timeNow }"
         >
           <template slot-scope="{ result: { loading, error, data } }">
             <!-- Loading -->
@@ -44,10 +51,17 @@
                 :items="data.stopPlace.estimatedCalls"
                 :items-per-page="5"
                 class="elevation-1"
+                :hide-default-footer="true"
               >
                 <template v-slot:item.aimedDepartureTime="{ item }">
                   <span>{{new Date(item.aimedDepartureTime).toLocaleTimeString()}}</span>
-                </template></v-data-table>
+                </template>
+                <template slot="no-data">
+                  <span>
+                    Ingen flere avganger i dag
+                  </span>
+                </template>
+              </v-data-table>
             </div>
 
             <!-- No result -->
@@ -59,10 +73,17 @@
         </ApolloQuery>
       </v-col>
     </v-row>
+    <v-row class="pt-12">
+      <v-col>
+        <a href="https://jvik.no">Made by jvik</a>
+        | <a href="https://github.com/jvik/corona">github repo</a>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
 <script>
+import moment from "moment";
 export default {
   data() {
     return {
@@ -84,6 +105,12 @@ export default {
         }
       ]
     };
+  },
+  computed: {
+    timeNow() {
+      const now = moment().format("YYYY-MM-DDTHH:mm:ss.SSSZZ");
+      return now;
+    }
   }
 };
 </script>
