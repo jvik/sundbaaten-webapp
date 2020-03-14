@@ -1,34 +1,18 @@
 <template>
   <v-app id="app">
-    <v-tooltip top>
-      <v-btn
-        v-if="updateExists"
-        block
-        max-height="4em"
-        @click="refreshApp"
-      >
-        Update to latest version
-      </v-btn>
-      <span>Tooltip</span>
-    </v-tooltip>
     <h1>Sundbåten</h1>
     <Entur />
-    <v-row>
-      <v-col>
-        <v-tooltip top>
-          <template v-slot:activator="{ on }">
-            <v-btn
-              icon
-              v-on="on"
-            >
-              <v-icon color="grey lighten-1">mdi-information</v-icon>
-            </v-btn>
-          </template>
-          <Span>refreshing: {{ refreshing }}
-            Registration: {{ registration }}
-            UpdateExists: {{ updateExists }} test</Span>
-        </v-tooltip>
-
+    <v-row
+      v-if="updateExists"
+      justify="center"
+    >
+      <v-col cols="auto">
+        <v-btn
+          block
+          @click="refreshApp"
+        >
+          Oppdater til siste versjon
+        </v-btn>
       </v-col>
     </v-row>
   </v-app>
