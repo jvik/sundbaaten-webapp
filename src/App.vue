@@ -26,7 +26,7 @@
           </template>
           <Span>refreshing: {{ refreshing }}
             Registration: {{ registration }}
-            UpdateExists: {{ updateExists }}</Span>
+            UpdateExists: {{ updateExists }} test</Span>
         </v-tooltip>
 
       </v-col>
