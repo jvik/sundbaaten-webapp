@@ -46,6 +46,7 @@ export default {
   },
   methods: {
     showRefreshUI(e) {
+      console.log("showRefreshUI triggered");
       // Display a snackbar inviting the user to refresh/reload the app due
       // to an app update being available.
       // The new service worker is installed, but not yet active.
