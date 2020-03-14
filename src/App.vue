@@ -13,7 +13,24 @@
     </v-tooltip>
     <h1>Sundbåten</h1>
     <Entur />
-    <!-- <ApolloExample msg="Welcome to Your Vue.js App" /> -->
+    <v-row>
+      <v-col>
+        <v-tooltip top>
+          <template v-slot:activator="{ on }">
+            <v-btn
+              icon
+              v-on="on"
+            >
+              <v-icon color="grey lighten-1">mdi-information</v-icon>
+            </v-btn>
+          </template>
+          <Span>refreshing: {{ refreshing }}
+            Registration: {{ registration }}
+            UpdateExists: {{ updateExists }}</Span>
+        </v-tooltip>
+
+      </v-col>
+    </v-row>
   </v-app>
 </template>
 
@@ -39,7 +56,6 @@ export default {
     document.addEventListener("swUpdated", this.showRefreshUI, { once: true });
     // Refresh all open app tabs when a new service worker is installed.
     navigator.serviceWorker.addEventListener("controllerchange", () => {
-      if (this.refreshing) return;
       this.refreshing = true;
       window.location.reload();
     });
