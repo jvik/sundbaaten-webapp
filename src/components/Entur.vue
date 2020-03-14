@@ -4,7 +4,7 @@
       <v-col
         class="d-flex"
         cols="auto"
-        sm="6"
+        sm="4"
       >
         <v-select
           :items="stopPlaces"
