@@ -11,7 +11,7 @@
       </v-btn>
       <span>Tooltip</span>
     </v-tooltip>
-    <h1>Sundbåten webapp</h1>
+    <h1>Sundbåten</h1>
     <Entur />
     <!-- <ApolloExample msg="Welcome to Your Vue.js App" /> -->
   </v-app>
@@ -52,12 +52,8 @@ export default {
       // Store the ServiceWorkerRegistration instance for later use.
       this.registration = e.detail;
       this.updateExists = true;
-      this.snackBtnText = "Refresh";
-      this.snackWithBtnText = "New version available!";
-      this.snackWithButtons = true;
     },
     refreshApp() {
-      this.snackWithButtons = false;
       // Protect against missing registration.waiting.
       if (!this.registration || !this.registration.waiting) {
         return;
