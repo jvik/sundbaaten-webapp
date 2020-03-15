@@ -15,6 +15,12 @@
         </v-btn>
       </v-col>
     </v-row>
+    <v-row class="pt-12">
+      <v-col>
+        <a href="https://jvik.no">Made by jvik</a>
+        | <a href="https://github.com/jvik/sundbaaten-webapp">github repo</a>
+      </v-col>
+    </v-row>
   </v-app>
 </template>
 
