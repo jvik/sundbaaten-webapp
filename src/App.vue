@@ -3,18 +3,13 @@
     <AppBar />
     <v-snackbar :timeout="0" v-model="updateExists">
       Oppdater til siste versjon
-      <v-btn color="green" text @click="refreshApp">Oppdater</v-btn>
-      <v-btn color="pink" text @click="updateExists = false">Lukk</v-btn>
+      <v-btn color="success" text @click="refreshApp">Oppdater</v-btn>
+      <v-btn color="warning" text @click="updateExists = false">Lukk</v-btn>
     </v-snackbar>
     <Entur />
     <v-row justify="center">
-      <v-col cols="auto" md="3">
-        <v-btn href="https://jvik.no" text color="deep-purple accent-4">jvik.no</v-btn>
-        <v-btn
-          href="https://github.com/jvik/sundbaaten-webapp"
-          text
-          color="deep-purple accent-4"
-        >Github repo</v-btn>
+      <v-col>
+        <BottomButtons />
       </v-col>
     </v-row>
   </v-app>
@@ -23,12 +18,14 @@
 <script>
 import Entur from "./components/Entur";
 import AppBar from "./components/AppBar";
+import BottomButtons from "./components/BottomButtons";
 
 export default {
   name: "App",
   components: {
     Entur,
-    AppBar
+    AppBar,
+    BottomButtons
   },
   data() {
     return {
