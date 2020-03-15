@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-row justify="center">
-      <v-col class="d-flex" cols="auto" sm="4">
+      <v-col class="d-flex" cols="auto">
         <v-select
           :items="stopPlaces"
           label="Avgangssted"

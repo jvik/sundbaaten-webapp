@@ -14,7 +14,17 @@
         <!-- Result -->
         <div v-else-if="data" class="result apollo">
           <v-card>
-            <v-card-title>Kommende avganger i dag</v-card-title>
+            <v-card-title>
+              Kommende avganger i dag
+              <v-tooltip top>
+                <template v-slot:activator="{ on }">
+                  <v-btn icon v-on="on">
+                    <v-icon color="grey lighten-1">mdi-information-variant</v-icon>
+                  </v-btn>
+                </template>
+                <span>Tabellen viser de ti neste avgangene i dag</span>
+              </v-tooltip>
+            </v-card-title>
             <v-data-table
               fixed-header
               :headers="headers"
@@ -27,9 +37,7 @@
                 <span>{{convertTime(item.aimedDepartureTime)}}</span>
               </template>
               <template slot="no-data">
-                <span>
-                  <v-icon color="warning">mdi-alert</v-icon>Ingen flere avganger
-                </span>
+                <v-alert dense type="warning">Ingen flere avganger i dag</v-alert>
               </template>
             </v-data-table>
           </v-card>

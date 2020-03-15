@@ -6,26 +6,15 @@
     >
       <template slot-scope="{ result: { loading, error, data } }">
         <!-- Loading -->
-        <div
-          v-if="loading"
-          class="loading apollo"
-        >Loading...</div>
+        <div v-if="loading" class="loading apollo">Loading...</div>
 
         <!-- Error -->
-        <div
-          v-else-if="error"
-          class="error apollo"
-        >An error occured</div>
+        <div v-else-if="error" class="error apollo">An error occured</div>
 
         <!-- Result -->
-        <div
-          v-else-if="data"
-          class="result apollo"
-        >
+        <div v-else-if="data" class="result apollo">
           <v-card>
-            <v-card-title>
-              Kommende dager
-            </v-card-title>
+            <v-card-title>Kommende dager</v-card-title>
 
             <v-data-table
               fixed-header
@@ -36,27 +25,19 @@
               hide-default-header
             >
               <template v-slot:item.aimedDepartureTime="{ item }">
-                <span>{{ convertTime(item.aimedDepartureTime)}} </span>
+                <span>{{ convertTime(item.aimedDepartureTime)}}</span>
               </template>
               <template slot="no-data">
-                <span>
-                  Ingen avganger funnet
-                </span>
+                <span>Ingen avganger funnet</span>
               </template>
             </v-data-table>
           </v-card>
 
-          <div v-if="data.stopPlace.estimatedCalls.length === 0">
-            {{data}}
-          </div>
-
+          <div v-if="data.stopPlace.estimatedCalls.length === 0">{{data}}</div>
         </div>
 
         <!-- No result -->
-        <div
-          v-else
-          class="no-result apollo"
-        >No result :(</div>
+        <div v-else class="no-result apollo">No result :(</div>
       </template>
     </ApolloQuery>
   </div>
