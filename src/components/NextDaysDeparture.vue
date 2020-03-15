@@ -36,7 +36,7 @@
               hide-default-header
             >
               <template v-slot:item.aimedDepartureTime="{ item }">
-                <span>{{new Date(item.aimedDepartureTime).toLocaleString()}}</span>
+                <span>{{ convertTime(item.aimedDepartureTime)}} </span>
               </template>
               <template slot="no-data">
                 <span>
@@ -63,6 +63,7 @@
 </template>
 
 <script>
+import moment from "moment";
 export default {
   props: ["id", "startDate", "numberOfDepartures"],
   data() {
@@ -75,6 +76,13 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    convertTime(time) {
+      return moment(time)
+        .locale("nb")
+        .format("dddd Do MMMM, hh:mm");
+    }
   }
 };
 </script>
