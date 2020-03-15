@@ -1,24 +1,18 @@
 <template>
   <v-app id="app">
     <h1>Sundbåten</h1>
+    <h2>Avgangstider</h2>
+    <v-snackbar :timeout="0" v-model="updateExists">
+      Oppdater til siste versjon
+      <v-btn color="green" text @click="refreshApp">Oppdater</v-btn>
+      <v-btn color="pink" text @click="updateExists = false">Lukk</v-btn>
+    </v-snackbar>
     <Entur />
-    <v-row
-      v-if="updateExists"
-      justify="center"
-    >
-      <v-col cols="auto">
-        <v-btn
-          block
-          @click="refreshApp"
-        >
-          Oppdater til siste versjon
-        </v-btn>
-      </v-col>
-    </v-row>
-    <v-row class="pt-12">
+    <v-row>
       <v-col>
         <a href="https://jvik.no">Made by jvik</a>
-        | <a href="https://github.com/jvik/sundbaaten-webapp">github repo</a>
+        |
+        <a href="https://github.com/jvik/sundbaaten-webapp">github repo</a>
       </v-col>
     </v-row>
   </v-app>
@@ -76,5 +70,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 2em;
+}
+
+body {
+  overflow-x: hidden !important;
 }
 </style>
