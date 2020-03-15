@@ -14,15 +14,26 @@
         <!-- Result -->
         <div v-else-if="data" class="result apollo">
           <v-card>
-            <v-card-title>Kommende dager</v-card-title>
+            <v-card-title>
+              Kommende dager
+              <v-tooltip bottom>
+                <template v-slot:activator="{ on }">
+                  <v-btn icon v-on="on">
+                    <v-icon color="grey lighten-1">mdi-information-variant</v-icon>
+                  </v-btn>
+                </template>
+                <span>Tabellen viser de ti neste avgangene</span>
+              </v-tooltip>
+            </v-card-title>
 
             <v-data-table
+              :mobile-breakpoint="NaN"
+              hide-default-header
               fixed-header
               :headers="headers"
               :items="data.stopPlace.estimatedCalls"
               class="elevation-1"
               :hide-default-footer="true"
-              hide-default-header
             >
               <template v-slot:item.aimedDepartureTime="{ item }">
                 <span>{{ convertTime(item.aimedDepartureTime)}}</span>

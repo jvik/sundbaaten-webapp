@@ -16,7 +16,7 @@
           <v-card>
             <v-card-title>
               Kommende avganger i dag
-              <v-tooltip top>
+              <v-tooltip bottom>
                 <template v-slot:activator="{ on }">
                   <v-btn icon v-on="on">
                     <v-icon color="grey lighten-1">mdi-information-variant</v-icon>
@@ -26,6 +26,7 @@
               </v-tooltip>
             </v-card-title>
             <v-data-table
+              :mobile-breakpoint="NaN"
               fixed-header
               :headers="headers"
               :items="data.stopPlace.estimatedCalls"
