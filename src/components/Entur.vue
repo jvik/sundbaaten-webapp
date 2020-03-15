@@ -1,11 +1,7 @@
 <template>
   <div>
     <v-row justify="center">
-      <v-col
-        class="d-flex"
-        cols="auto"
-        sm="4"
-      >
+      <v-col class="d-flex" cols="auto" sm="4">
         <v-select
           :items="stopPlaces"
           label="Avgangssted"
@@ -15,16 +11,9 @@
         ></v-select>
       </v-col>
     </v-row>
-    <v-row
-      class="mb-12"
-      justify="center"
-    >
+    <v-row class="mb-12" justify="center">
       <v-col cols="auto">
-        <TodayDeparture
-          :id="currentStopPlace.nsrId"
-          :startDate="timeNow"
-          numberOfDepartures=10
-        />
+        <TodayDeparture :id="currentStopPlace.nsrId" :startDate="timeNow" numberOfDepartures="10" />
       </v-col>
     </v-row>
   </div>
@@ -39,9 +28,9 @@ export default {
   },
   data() {
     return {
-      currentStopPlace: { name: "Kirkelandet", nsrId: "NSR:StopPlace:41263" },
+      currentStopPlace: { name: "Kirklandet", nsrId: "NSR:StopPlace:41263" },
       stopPlaces: [
-        { name: "Kirkelandet", nsrId: "NSR:StopPlace:41263" },
+        { name: "Kirklandet", nsrId: "NSR:StopPlace:41263" },
         { name: "Innlandet", nsrId: "NSR:StopPlace:38275" },
         { name: "Norlandet", nsrId: "NSR:StopPlace:40933" },
         { name: "Gomalandet", nsrId: "NSR:StopPlace:40241" }
