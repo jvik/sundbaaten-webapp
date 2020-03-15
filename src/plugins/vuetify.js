@@ -32,7 +32,3 @@ export default new Vuetify({
 		}
 	}
 });
-
-mq.addEventListener('change', (e) => {
-  Vuetify.framework.theme.dark = e.matches
-})
