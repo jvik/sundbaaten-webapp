@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="no">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover"
-    />
-    <meta name="description" content="Sundbåten rutetider" />
-    <meta name="keywords" content="sundbaaten neste avgang" />
-    <!-- Iphone -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <title>Sundbåten</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
-    />
-  </head>
-  <body>
-    <noscript>
-      <strong
-        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
-        properly without JavaScript enabled. Please enable it to
-        continue.</strong
-      >
-    </noscript>
-    <div id="app" />
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150370270-3"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-150370270-3');
+	</script>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
+	<meta name="description" content="Sundbåten rutetider" />
+	<meta name="keywords" content="sundbaaten neste avgang" />
+	<!-- Iphone -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="mobile-web-app-capable" content="yes" />
+	<title>Sundbåten</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" />
+</head>
+
+<body>
+	<noscript>
+		<strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+			properly without JavaScript enabled. Please enable it to
+			continue.</strong>
+	</noscript>
+	<div id="app" />
+	<!-- built files will be auto injected -->
+</body>
+
 </html>
