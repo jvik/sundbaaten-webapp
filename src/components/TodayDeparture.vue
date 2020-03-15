@@ -6,26 +6,15 @@
     >
       <template slot-scope="{ result: { loading, error, data } }">
         <!-- Loading -->
-        <div
-          v-if="loading"
-          class="loading apollo"
-        >Loading...</div>
+        <div v-if="loading" class="loading apollo">Loading...</div>
 
         <!-- Error -->
-        <div
-          v-else-if="error"
-          class="error apollo"
-        >An error occured</div>
+        <div v-else-if="error" class="error apollo">An error occured</div>
 
         <!-- Result -->
-        <div
-          v-else-if="data"
-          class="result apollo"
-        >
+        <div v-else-if="data" class="result apollo">
           <v-card>
-            <v-card-title>
-              Kommende avganger i dag
-            </v-card-title>
+            <v-card-title>Kommende avganger i dag</v-card-title>
             <v-data-table
               fixed-header
               :headers="headers"
@@ -39,8 +28,7 @@
               </template>
               <template slot="no-data">
                 <span>
-                  <v-icon>mdi-alert</v-icon>
-                  Ingen flere avganger
+                  <v-icon color="warning">mdi-alert</v-icon>Ingen flere avganger
                 </span>
               </template>
             </v-data-table>
@@ -57,14 +45,10 @@
               </v-col>
             </v-row>
           </div>
-
         </div>
 
         <!-- No result -->
-        <div
-          v-else
-          class="no-result apollo"
-        >No result :(</div>
+        <div v-else class="no-result apollo">No result :(</div>
       </template>
     </ApolloQuery>
   </div>

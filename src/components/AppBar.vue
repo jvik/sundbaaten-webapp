@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar color="#43a047" dense>
+    <v-app-bar color="primary" dense>
       <v-spacer></v-spacer>
       <v-toolbar-title>Sundbåten avgangstider</v-toolbar-title>
       <v-spacer></v-spacer>
