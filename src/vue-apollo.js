@@ -37,7 +37,10 @@ const defaultOptions = {
   // You need to pass a `wsEndpoint` for this to work
   websocketsOnly: false,
   // Is being rendered on the server?
-  ssr: false
+  ssr: false,
+  httpLinkOptions: {
+    headers: { "ET-Client-Name": "jvik.no - sundbaaten app"}
+  }
 
   // Override default apollo link
   // note: don't override httpLink here, specify httpLink options in the
