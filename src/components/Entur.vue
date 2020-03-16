@@ -11,9 +11,14 @@
         ></v-select>
       </v-col>
     </v-row>
+    <v-row justify="center">
+      <v-col cols="auto" sm="4">
+        <v-alert type="info">Rutetilbudet er innstilt fra 16. mars til over påske grunnet COVID-19.</v-alert>
+      </v-col>
+    </v-row>
     <v-row class="mb-12" justify="center">
       <v-col cols="auto">
-        <TodayDeparture :id="currentStopPlace.nsrId" :startDate="timeNow" numberOfDepartures="10" />
+        <TodayDeparture :id="currentStopPlace.nsrId" :startDate="timeNow" numberOfDepartures="50" />
       </v-col>
     </v-row>
   </div>
@@ -35,7 +40,7 @@ export default {
         { name: "Norlandet", nsrId: "NSR:StopPlace:40933" },
         { name: "Gomalandet", nsrId: "NSR:StopPlace:40241" }
       ],
-      numberOfDepartures: 10
+      numberOfDepartures: 30
     };
   },
   computed: {

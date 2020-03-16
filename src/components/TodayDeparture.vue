@@ -15,14 +15,14 @@
         <div v-else-if="data" class="result apollo">
           <v-card>
             <v-card-title>
-              Kommende avganger i dag
+              Kommende avganger
               <v-tooltip bottom>
                 <template v-slot:activator="{ on }">
                   <v-btn icon v-on="on">
                     <v-icon color="grey lighten-1">mdi-information-variant</v-icon>
                   </v-btn>
                 </template>
-                <span>Tabellen viser de ti neste avgangene i dag</span>
+                <span>De neste 10 avgangene</span>
               </v-tooltip>
             </v-card-title>
             <v-data-table
@@ -46,11 +46,11 @@
           <div v-if="data.stopPlace.estimatedCalls.length === 0">
             <v-row>
               <v-col>
-                <NextDaysDeparture
+                <!-- <NextDaysDeparture
                   :id="id"
                   :startDate="startDate"
                   :numberOfDepartures="numberOfDepartures"
-                />
+                />-->
               </v-col>
             </v-row>
           </div>
@@ -65,7 +65,7 @@
 
 <script>
 import moment from "moment";
-import NextDaysDeparture from "./NextDaysDeparture";
+// import NextDaysDeparture from "./NextDaysDeparture";
 export default {
   data() {
     return {
@@ -80,11 +80,13 @@ export default {
   },
   props: ["id", "numberOfDepartures", "startDate"],
   components: {
-    NextDaysDeparture
+    // NextDaysDeparture
   },
   methods: {
     convertTime(time) {
-      return moment(time).format("hh:mm");
+      return moment(time)
+        .locale("nb")
+        .format("dddd Do MMMM, HH:mm");
     }
   }
 };
