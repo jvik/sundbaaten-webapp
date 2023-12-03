@@ -1,5 +1,7 @@
 # Sundbaaten Web App
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b7020e25-61dd-4800-831c-5a4f5bcc3ccd/deploy-status)](https://app.netlify.com/sites/nifty-ardinghelli-78c45b/deploys)
+
 This project is a Vue.js application for displaying the upcoming departures of Sundbaaten, a local boat service in Norway. The application uses GraphQL to fetch data from an API and displays the next 10 departures.
 
 ## Project setup
