@@ -2,13 +2,8 @@
   <div>
     <v-row justify="center">
       <v-col class="d-flex" cols="auto">
-        <v-select
-          :items="stopPlaces"
-          label="Avgangssted"
-          item-text="name"
-          v-model="currentStopPlace"
-          return-object
-        ></v-select>
+        <v-select :items="stopPlaces" label="Avgangssted" item-text="name" v-model="currentStopPlace"
+          return-object></v-select>
       </v-col>
     </v-row>
     <!-- <v-row justify="center">
@@ -18,11 +13,7 @@
     </v-row> -->
     <v-row class="mb-12" justify="center">
       <v-col cols="auto">
-        <TodayDeparture
-          :id="currentStopPlace.nsrId"
-          :startDate="timeNow"
-          numberOfDepartures="50"
-        />
+        <TodayDeparture :id="currentStopPlace.nsrId" :startDate="timeNow" numberOfDepartures="50" />
       </v-col>
     </v-row>
   </div>
@@ -43,6 +34,7 @@ export default {
         { name: "Innlandet", nsrId: "NSR:StopPlace:38275" },
         { name: "Norlandet", nsrId: "NSR:StopPlace:40933" },
         { name: "Gomalandet", nsrId: "NSR:StopPlace:40241" },
+        { name: "Melkvikan", nsrId: "NSR:StopPlace:62973" }
       ],
       numberOfDepartures: 30,
     };
