@@ -1,31 +1,51 @@
-# Sundbaaten webapp
+# Sundbaaten Web App
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b7020e25-61dd-4800-831c-5a4f5bcc3ccd/deploy-status)](https://app.netlify.com/sites/nifty-ardinghelli-78c45b/deploys)
+This project is a Vue.js application for displaying the upcoming departures of Sundbaaten, a local boat service in Norway. The application uses GraphQL to fetch data from an API and displays the next 10 departures.
 
 ## Project setup
+
+To set up the project, follow these steps:
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/jvik/sundbaaten-webapp.git
 ```
+
+2. Navigate to the project directory:
+
+```bash
+cd sundbaaten-webapp
+```
+
+3. Install the dependencies:
+
+```bash
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
+## Running the application
+
+To run the application, use the following command:
+
+App is currently borked on v17 and above.
+
+```bash
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+The application will be available at `http://localhost:8080`.
 
-### Run your unit tests
-```
-npm run test:unit
-```
+## Features
 
-### Lints and fixes files
-```
-npm run lint
-```
+- Displays the next 10 departures from a specified stop.
+- Provides information about each departure, including the departure time.
+- Handles loading and error states.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Contributing
+
+Contributions are welcome. Please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
