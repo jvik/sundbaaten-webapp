@@ -1,0 +1,12 @@
+name: Dependabot - Automerge
+
+on:
+  pull_request:
+
+jobs:
+  automerge:
+    name: Dependabot - automerge
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: jvik/github-actions/dependabot/dependabotautomerge@main
