@@ -10,3 +10,5 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: jvik/github-actions/dependabot/automerge@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
